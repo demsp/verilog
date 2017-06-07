@@ -1,7 +1,8 @@
 float bx;
 float by;
 int boxSize = 75;
-int Color = 153;
+int Grey = 153;
+int White = 255;
 boolean overBox = false;
 boolean locked = false;
 void setup() {
@@ -12,9 +13,9 @@ void setup() {
 }
 void draw() { 
   background(0);
-fill(Color);
+fill(Grey);
 if(locked){
-fill(255);
+fill(White);
       }
   // Draw the box
   rect(bx, by, boxSize, boxSize);
@@ -27,4 +28,4 @@ void mousePressed() {
     if(!locked){    locked = true;}
     else {    locked = false;}
    }
- }
+}
