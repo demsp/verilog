@@ -10,18 +10,22 @@ size(640, 360);
   sp1 = new Spot();
   sp2 = new Spot(width*0.7, height*0.5, 80);
   rectMode(RADIUS);  
-  }
+}
+
 void draw() { 
   sp1.display1();
   sp2.display2();
-  println(Grey);
 }
 
  void mousePressed() {
- 
- if(!locked){    locked = true;}
-    else {    locked = false;}
+if (mouseX > sp1.dx-sp1.boxSize && mouseX < sp1.dx+sp1.boxSize && 
+mouseY > sp1.dy-sp1.boxSize && mouseY < sp1.dy+sp1.boxSize) {
+
+if(!locked){    locked = true;}
+else {    locked = false;}
     }
+  }
+
 class Spot {
   float dx, dy, boxSize;
     // First version of the Spot constructor;
@@ -36,6 +40,7 @@ class Spot {
     dy = ypos;
     boxSize = r;
   }
+ 
  void display1() {
   fill(Grey);
   if(locked){
