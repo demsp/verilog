@@ -29,6 +29,5 @@ void draw() {
 void mousePressed() {
  
     col= 200;
-    fill(255, 255, 255);
-}
+  }
 
