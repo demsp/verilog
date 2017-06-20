@@ -1,1 +1,1 @@
-# miniGames_pde
+# Pascal.pas
