@@ -1,0 +1,23 @@
+module demux2to4 (key,led, clk,oclk);
+input  [1:0] key; 
+output [3:0] led;
+input wire clk;
+output wire oclk; 
+ wire a = key[0];
+ wire b = key[1];
+ wire na = ~key[0];
+ wire nb = ~key[1];
+  
+  
+ //assign led [0] = na & nb;
+ //assign led [1] = na & b;
+ //assign led [2] = a & nb;
+ //assign led [3] = a & b;
+ 
+ assign led [0] = na & nb & clk;
+ assign led [1] = na & b & clk;
+ assign led [2] = a & nb & clk;
+ assign led [3] = a & b & clk;
+ 
+ assign oclk = clk;
+  endmodule
