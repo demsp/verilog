@@ -1,5 +1,5 @@
-//4-x'разрядный регистр
-module d_trig_verilog
+//4 dff in 1 reg
+module register_4dff
 
 (
     input  [4:0] key,  
