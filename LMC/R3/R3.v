@@ -1,5 +1,4 @@
-module R3 (MUX_switch, Acc_button, Acc, counter, timer555, 
-            Counter_load, RAM_button, data_in, RAM_out);
+module R3 (MUX_switch, Acc_button, Acc, counter, timer555, Counter_load, RAM_button, data_in, RAM_out);
    parameter ADDR_WIDTH = 2;
    parameter DATA_WIDTH = 4;
    
