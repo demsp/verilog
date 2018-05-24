@@ -11,8 +11,7 @@ wire [1:0] counter;
 reg [DATA_WIDTH-1:0] data_in;
 wire [DATA_WIDTH-1:0] RAM_out;
 
-R3 test_R3(MUX_switch, Acc_button, Acc, counter, timer555, 
-           Counter_load, RAM_button, data_in, RAM_out);
+R3 test_R3(MUX_switch, Acc_button, Acc, counter, timer555, Counter_load, RAM_button, data_in, RAM_out);
 initial 
   begin
     timer555 = 0;
