@@ -1,3 +1,13 @@
+module register4
+(
+  input  [3:0] reg_data,
+  input reg_button,
+  output reg [3:0] q  
+);
+always @(posedge reg_button)
+     	 q <= reg_data;
+endmodule
+
 module R3 (MUX_switch, Acc_button, Acc, counter, timer555, Counter_load, RAM_button, data_in, RAM_out);
    parameter ADDR_WIDTH = 2;
    parameter DATA_WIDTH = 4;
