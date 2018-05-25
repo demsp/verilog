@@ -1,4 +1,4 @@
-module M ( output reg LED);
+module inner_Clock ( output reg LED);
 ALTUFM_OSC osc( .oscena(1'b1), .osc(clk));
    reg signal;
    reg [24:0] osc_counter; 
