@@ -8,8 +8,7 @@ always @(negedge reg_button) //posedge->negedge
      	 q <= reg_data;
 endmodule
 
-module R10 (reset_count, counter, timer555, 
-                         RAM_button, data_in, RAM_out, mux_switch_out, mux_out,Acc_out);
+module R10 (reset_count, counter, timer555,RAM_button, data_in, RAM_out, mux_switch_out, mux_out,Acc_out);
    parameter ADDR_WIDTH = 2;
    parameter DATA_WIDTH = 8;
       
