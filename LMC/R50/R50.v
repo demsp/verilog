@@ -46,7 +46,7 @@ wire MUX_switch;
 assign MUX_switch = RAM_out[5];
 reg [3:0] MUX2; 
 always @*
-MUX2 = MUX_switch ? RAM_out : data_in[3:0];
+	MUX2 = MUX_switch ? RAM_out[3:0] : data_in[3:0];
 assign mux_out = MUX2;
 assign mux_switch_out = MUX_switch;
 
