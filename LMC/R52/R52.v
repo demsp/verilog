@@ -9,7 +9,7 @@ always @(posedge reg_button)
 endmodule
 
 module R52 (Z_flag, PZ_flag, reset_count, counter, timer555, 
-   RAM1_button, data_in, RAM1_out, RAM2_out, mux_switch_out, mux_out,Acc_out, data_out, Acc_latch);
+   RAM1_button, data_in, RAM1_out, RAM2_out, mux_switch_out, mux_out,Acc_out, data_out, Acc_dff);
   parameter ADDR_WIDTH = 4;
   parameter DATA_WIDTH = 12;
       
@@ -26,7 +26,7 @@ module R52 (Z_flag, PZ_flag, reset_count, counter, timer555,
   output [DATA_WIDTH-1:0] RAM1_out;
   output [3:0] RAM2_out;
   output Z_flag, PZ_flag;
-  output Acc_latch;
+  output Acc_dff;
  
 wire JMP_button, Z_JMP_button,PZ_JMP_button;
   assign JMP_button = RAM1_out[6];
@@ -86,15 +86,15 @@ MUX4 = mux_switch[1] ? (mux_switch[0] ? RAM2_out : subtract)
 //Acc_button
 wire Acc_button;
  assign Acc_button = RAM1_out[10];
-// Acc_latch
-reg Acc_latch;
+// Acc_dff
+reg Acc_dff;
 always @(negedge timer555)
-   Acc_latch <= Acc_button;  
+   Acc_dff <= Acc_button;  
 //Acc
 register4 Acc_reg(
 	.reg_data(mux_out),
-//.reg_button(Acc_button & timer555),
-	.reg_button(Acc_latch), 
+      //.reg_button(Acc_button & timer555),
+	.reg_button(Acc_dff), 
 	.q(Acc_out)
 );
 //data_out
