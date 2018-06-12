@@ -15,10 +15,10 @@ module tR52;
   wire [DATA_WIDTH-1:0] RAM1_out;
   wire [3:0] RAM2_out;
   wire Z_flag, PZ_flag;
-  wire Acc_latch;
+  wire Acc_dff;
   
 R52 test_R52(Z_flag, PZ_flag, reset_count, counter, timer555, RAM1_button, data_in,
-    RAM1_out, RAM2_out, mux_switch_out, mux_out,Acc_out, data_out, Acc_latch);
+    RAM1_out, RAM2_out, mux_switch_out, mux_out,Acc_out, data_out, Acc_dff);
 initial // Clock generator
   begin
     timer555 = 0;
