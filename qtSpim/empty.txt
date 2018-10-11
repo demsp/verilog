@@ -1,0 +1,10 @@
+.text
+#code section 
+.globl main
+#starting point: must be global 
+
+#main: 
+# user program code 
+.data
+#data section 
+   # user program data 
