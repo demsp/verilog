@@ -27,7 +27,7 @@ else
    q <= myAND;
 
 //NOR from 3 to 1
-// NOR_3_1 пропускает всё время, пока триггкр q пуст 
+// NOR_3_1 пропускает всё время, пока триггер q пуст 
 wire NOR_3_1;
 assign myNOR = clk & q & reset_n;
 endmodule
